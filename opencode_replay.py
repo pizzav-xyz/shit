@@ -171,7 +171,7 @@ def main(directory=None, list_dirs=False, dry_run=False):
         cprint(f"  {s['title']}", "cyan", end="")
         print(f"  {s['id']}")
     mods = _mods(db, [s["id"] for s in sessions])
-    cprint(f"\n{len(mods)} file modification(s)", "bold")
+    cprint(f"\n{len(mods)} file modification(s)", attrs=["bold"])
     if mods:
         replay(mods, dry_run=dry_run)
 
