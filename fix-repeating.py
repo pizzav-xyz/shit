@@ -149,7 +149,7 @@ def main():
     cursor = conn.cursor()
 
     # Find parts with text data that are large enough to have loops
-    query = "SELECT id, message_id, session_id, data FROM part WHERE data LIKE '%\"type\":\"text\"%' AND length(data) > 1000"
+    query = "SELECT id, message_id, session_id, data FROM part WHERE data LIKE '%\"text\":%' AND length(data) > 1000"
     if args.session:
         query += f" AND session_id = '{args.session}'"
     query += " ORDER BY length(data) DESC"
